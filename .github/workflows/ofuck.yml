@@ -2,11 +2,12 @@ name: Build OFRP [beryl]
 
 on:
   workflow_dispatch:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   build:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
     name: 🦊 Build OrangeFox Recovery
     runs-on: ubuntu-latest
 
