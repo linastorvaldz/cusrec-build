@@ -19,10 +19,11 @@ jobs:
       run: env
 
     - name: Build
-      uses: UWU-TEAM/UWU-OrangeFox-Builder@main
+      uses: linastorvaldz/orangefox-builder-action@master
       with:
         USER_NAME: eraselk
         USER_EMAIL: eraselk@proton.me
+        FOX_SYNC_BRANCH: 12.1
         DEVICE_TREE: https://github.com/linastorvaldz/device_xiaomi_beryl_recovery
         DEVICE_TREE_BRANCH: fox_12.1
         DEVICE_PATH: device/xiaomi/beryl
@@ -30,4 +31,3 @@ jobs:
         BUILD_TARGET: vendorboot
         TG_CHAT_ID: ${{ secrets.CHAT_ID }}
         TG_TOKEN: ${{ secrets.TG_TOKEN }}
-        GH_RELEASE: 'true'
