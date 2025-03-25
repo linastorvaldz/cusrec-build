@@ -5,8 +5,6 @@ on:
 
 jobs:
   build:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     name: 🦊 Build OrangeFox Recovery
     runs-on: ubuntu-latest
@@ -21,13 +19,15 @@ jobs:
     - name: Build
       uses: linastorvaldz/orangefox-builder-action@master
       with:
-        USER_NAME: eraselk
-        USER_EMAIL: eraselk@proton.me
-        FOX_SYNC_BRANCH: 12.1
-        DEVICE_TREE: https://github.com/linastorvaldz/device_xiaomi_beryl_recovery
-        DEVICE_TREE_BRANCH: fox_12.1
-        DEVICE_PATH: device/xiaomi/beryl
-        DEVICE_NAME: beryl
-        BUILD_TARGET: vendorboot
+        USER_NAME: "eraselk"
+        USER_EMAIL: "eraselk@proton.me"
+        FOX_SYNC_BRANCH: "14.1"
+        DEVICE_TREE: "https://github.com/linastorvaldz/device_xiaomi_beryl_recovery"
+        DEVICE_TREE_BRANCH: "fox_12.1"
+        DEVICE_PATH: "device/xiaomi/beryl"
+        DEVICE_NAME: "beryl"
+        BUILD_TARGET: "vendorboot"
         TG_CHAT_ID: ${{ secrets.CHAT_ID }}
         TG_TOKEN: ${{ secrets.TG_TOKEN }}
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
