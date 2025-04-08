@@ -19,14 +19,12 @@ jobs:
     - name: Build
       uses: linastorvaldz/twrp-builder-action@master
       with:
-        USER_NAME: eraselk
-        USER_EMAIL: eraselk@proton.me
         TWRP_SYNC_BRANCH: 12.1
         DEVICE_TREE: https://github.com/VannTakashi/device_xiaomi_lake
         DEVICE_TREE_BRANCH: twrp-12.1
         DEVICE_PATH: device/xiaomi/lake
         DEVICE_NAME: lake
-        BUILD_TARGET: vendorboot
+        BUILD_TARGET: vendor_boot
         TG_CHAT_ID: ${{ secrets.CHAT_ID }}
         TG_TOKEN: ${{ secrets.TG_TOKEN }}
       env:
