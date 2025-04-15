@@ -1,0 +1,31 @@
+name: Build TWRP [lake][personal]
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    name: Build TWRP
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Print default env
+      run: env
+
+    - name: Build
+      uses: linastorvaldz/twrp-builder-action@master
+      with:
+        TWRP_SYNC_BRANCH: 12.1
+        DEVICE_TREE: https://github.com/VannTakashi/device_xiaomi_lake
+        DEVICE_TREE_BRANCH: personal/twrp-12.1
+        DEVICE_PATH: device/xiaomi/lake
+        DEVICE_CODENAME: lake
+        BUILD_TARGET: vendor_boot
+        TG_CHAT_ID: ${{ secrets.CHAT_ID }}
+        TG_TOKEN: ${{ secrets.TG_TOKEN }}
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
