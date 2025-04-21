@@ -1,0 +1,33 @@
+name: Build OFRP [tanzanite]
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    name: 🦊 Build OrangeFox Recovery
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Print default env
+      run: env
+
+    - name: Build
+      uses: linastorvaldz/orangefox-builder-action@master
+      with:
+        USER_NAME: eraselk
+        USER_EMAIL: eraselk@proton.me
+        FOX_SYNC_BRANCH: 12.1
+        DEVICE_TREE: https://github.com/linastorvaldz/device_xiaomi_tanzanite_recovery
+        DEVICE_TREE_BRANCH: fox_12.1
+        DEVICE_PATH: device/xiaomi/tanzanite
+        DEVICE_NAME: tanzanite
+        BUILD_TARGET: vendorboot
+        TG_CHAT_ID: ${{ secrets.CHAT_ID }}
+        TG_TOKEN: ${{ secrets.TG_TOKEN }}
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
