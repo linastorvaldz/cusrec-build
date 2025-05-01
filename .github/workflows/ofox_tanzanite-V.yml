@@ -1,4 +1,4 @@
-name: Build OFRP [tanzanite]
+name: Build OFRP [tanzanite][A15]
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
         USER_EMAIL: eraselk@proton.me
         FOX_SYNC_BRANCH: 12.1
         DEVICE_TREE: https://github.com/linastorvaldz/device_xiaomi_tanzanite_recovery
-        DEVICE_TREE_BRANCH: fox_12.1-U
+        DEVICE_TREE_BRANCH: fox_12.1-V
         DEVICE_PATH: device/xiaomi/tanzanite
         DEVICE_NAME: tanzanite
         BUILD_TARGET: vendorboot
