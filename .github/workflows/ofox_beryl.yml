@@ -19,8 +19,6 @@ jobs:
     - name: Build
       uses: linastorvaldz/orangefox-builder-action@master
       with:
-        USER_NAME: eraselk
-        USER_EMAIL: eraselk@proton.me
         FOX_SYNC_BRANCH: 12.1
         DEVICE_TREE: https://github.com/linastorvaldz/device_xiaomi_beryl_recovery
         DEVICE_TREE_BRANCH: fox_12.1
